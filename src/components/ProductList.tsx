@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductGrid";
 import ProductTable from "./ProductTable";
+import { ProductType } from "./type";
 
-function ProductList() {
-  const [products, setProducts] = useState([]);
+const ProductList: React.FC = () => {
+  const [products, setProducts] = useState<ProductType[]>([]);
   const [view, setView] = useState("grid");
-  const [sortOrder, setSortOrder] = useState(null);
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc' | null>(null);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -14,7 +15,7 @@ function ProductList() {
       .catch((err) => console.error("Error fetching products:", err));
   }, []);
 
-  const handleSort = (order) => {
+  const handleSort = (order:'asc' | 'desc') => {
     const sorted = [...products].sort((a, b) =>
       order === "asc" ? a.price - b.price : b.price - a.price
     );

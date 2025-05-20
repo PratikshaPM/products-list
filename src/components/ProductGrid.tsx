@@ -1,6 +1,11 @@
 import React from "react";
+import { ProductType } from "./type";
 
-function ProductCard({ product }) {
+interface ProductCardType {
+  product: ProductType
+}
+
+const ProductCard: React.FC<ProductCardType> = ({ product }) => {
   return (
     <div className="product-card">
       <img src={product.image} alt={product.title} />
