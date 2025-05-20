@@ -1,4 +1,3 @@
-// components/ProductList.js
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductGrid";
 import ProductTable from "./ProductTable";

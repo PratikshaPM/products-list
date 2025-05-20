@@ -1,4 +1,3 @@
-// components/ProductTable.js
 import React from "react";
 
 function ProductTable({ products }) {
